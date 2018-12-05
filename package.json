@@ -1,0 +1,20 @@
+{
+  "name": "html-to-pdf-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sjasperse/html-to-pdf-api.git"
+  },
+  "version": "1.0.0",
+  "description": "API to render HTML to PDF",
+  "main": "src/index.js",
+  "scripts": {},
+  "author": "sjasperse",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "express": "4.16.2",
+    "phantom-html-to-pdf": "0.5.5",
+    "phantomjs-prebuilt": "2.1.16",
+    "uuid": "3.1.0"
+  }
+}

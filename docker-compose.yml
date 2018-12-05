@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  html-to-pdf:
+    build: .
+    ports:
+      - "3000:3000"
+      - "5858:5858"
+    environment:
+      - ENV=LOCAL
+      - UDP_LOGGER_ENABLED=false
+      - UDP_LOGGER_HOST=udp-listener
+      - UDP_LOGGER_PORT=3000
+    volumes:
+      - ./src/test.html:/app/test.html
+    entrypoint: node --inspect=*:5858 /app/index.js
+
+  udp-listener:
+    image: mendhak/udp-listener
+    environment:
+      - UDPPORT=3000
+    expose:
+      - 3000/udp
